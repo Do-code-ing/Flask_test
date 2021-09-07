@@ -1,16 +1,11 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask("Test")
 
 
 @app.route("/")
 def home():
-    return "Hello! Welcome to flask."
-
-
-@app.route("/<username>")
-def potato(username):
-    return f"Hello your name is {username}"
+    return render_template("potato.html")
 
 
 app.run()
