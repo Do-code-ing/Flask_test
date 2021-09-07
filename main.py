@@ -8,9 +8,9 @@ def home():
     return "Hello! Welcome to flask."
 
 
-@app.route("/contact")
-def potato():
-    return "Contact me."
+@app.route("/<username>")
+def potato(username):
+    return f"Hello your name is {username}"
 
 
 app.run()

@@ -1,1 +1,3 @@
 @: decorator, look for functions only under it
+dynamic urls: instagram.com/{username}
+placeholder: @app.route(<placeholder>) -> function(placeholder)
