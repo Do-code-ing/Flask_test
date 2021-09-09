@@ -1,9 +1,11 @@
 @: decorator, look for functions only under it
 dynamic urls: instagram.com/{username}
 placeholder: @app.route(<placeholder>) -> function(placeholder)
+request.args.get(word): http://asd.com/?id=123, id
 render_template: render_template(template name in 'templates' folder)
 request: request
 query arguments: request.args.get(name)
 request to html: render_template("report.html", searching_by=word) and use {{}} in html
 redirect: redirect("/")
 {%%}: when python code to html in flask
+send_file: start to download file
