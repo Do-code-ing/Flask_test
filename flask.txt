@@ -5,3 +5,4 @@ render_template: render_template(template name in 'templates' folder)
 request: request
 query arguments: request.args.get(name)
 request to html: render_template("report.html", searching_by=word) and use {{}} in html
+redirect: redirect("/")
