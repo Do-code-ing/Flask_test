@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="static/css/style.css" />
+    <title>Job Search</title>
+  </head>
+  <body>
+    <header>
+      <nav class="nav_top">
+        <ol>
+          <li class="nav_li">
+            <a href="/"><p>Home</p></a>
+          </li>
+          <li class="nav_li">
+            <a href="/reference"><p>Reference</p></a>
+          </li>
+          <li class="nav_li">
+            <a href="/more"><p>More</p></a>
+          </li>
+        </ol>
+      </nav>
+    </header>
+    <main>
+      <form action="/report" method="get">
+        <input placeholder="Search for a job" name="word" required />
+        <button>Search</button>
+      </form>
+    </main>
+    <aside class="right_side">
+      <div class="right_side_div">
+        <section class="search_record">aside</section>
+        <section class="scroll_top_btn">UP</section>
+      </div>
+    </aside>
+  </body>
+</html>
