@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request, redirect
-from scrapper import get_jobs
+from scraper import get_jobs
 
 app = Flask("Test")
+
+db = {}  # fake DB
 
 
 @app.route("/")
@@ -14,8 +16,10 @@ def report():
     word = request.args.get("word")
     if word:
         word = word.lower()
-        jobs = get_jobs(word)
-        return render_template("report.html", searching_by=word)
+        if word not in db:
+            jobs = get_jobs(word)
+            db[word] = jobs
+        return render_template("report.html", result_number=len(db[word]), searching_by=word, jobs=db[word])
     return redirect("/")
 
 

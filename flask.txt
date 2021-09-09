@@ -6,3 +6,4 @@ request: request
 query arguments: request.args.get(name)
 request to html: render_template("report.html", searching_by=word) and use {{}} in html
 redirect: redirect("/")
+{%%}: when python code to html in flask
