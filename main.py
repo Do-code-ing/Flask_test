@@ -12,16 +12,26 @@ def home():
     return render_template("home.html")
 
 
-@app.route("/report")
-def report():
+@app.route("/result")
+def result():
     word = request.args.get("word")
     if word:
         word = word.lower()
         if word not in db:
             jobs = get_jobs(word)
             db[word] = jobs
-        return render_template("report.html", result_number=len(db[word]), searching_by=word, jobs=db[word])
+        return render_template("result.html", result_number=len(db[word]), searching_by=word, jobs=db[word])
     return redirect("/")
+
+
+@app.route("/reference")
+def reference():
+    return render_template("reference.html")
+
+
+@app.route("/more")
+def more():
+    return render_template("more.html")
 
 
 @app.route("/export")

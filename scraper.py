@@ -2,6 +2,14 @@ import requests
 from bs4 import BeautifulSoup
 
 
+def check(url):
+    result = requests.get(url)
+    soup = BeautifulSoup(result.text, "html.parser")
+    job_num = soup.find("div", {"class": "js-search-title"}
+                        ).find("span").get_text(strip=True)[0]
+    return int(job_num)
+
+
 def get_last_page(url):
     result = requests.get(url)
     soup = BeautifulSoup(result.text, "html.parser")
@@ -40,6 +48,8 @@ def extract_jobs(last_page, url):
 
 def get_jobs(word):
     url = f"https://stackoverflow.com/jobs?q={word}"
-    last_page = get_last_page(url)
-    jobs = extract_jobs(last_page, url)
-    return jobs
+    if check(url):
+        last_page = get_last_page(url)
+        jobs = extract_jobs(last_page, url)
+        return jobs
+    return {}

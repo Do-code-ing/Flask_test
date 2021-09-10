@@ -1,4 +1,11 @@
 @import "reset.css";
+@font-face {
+  font-family: "SEBANG_Gothic_Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SEBANG_Gothic_Bold.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
 html {
   height: 100vh;
@@ -8,10 +15,16 @@ html {
 body {
   display: grid;
   grid-template-columns: 1fr 4fr 1fr;
-  grid-template-rows: 1fr 5fr;
+  grid-template-rows: 1fr 8fr 1fr;
+  gap: 1rem;
   height: 100vh;
+  background-image: url("/static/img/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   align-items: center;
   text-align: center;
+  font-family: "SEBANG_Gothic_Bold";
 }
 
 header {
@@ -24,55 +37,116 @@ main {
   grid-row: 2;
 }
 
-a {
-  color: inherit;
+input {
+  font-family: inherit;
+  text-align: center;
+  border: none;
+  background-color: unset;
+  transition: background-color 0.35s, color 0.35s;
 }
 
-a:link {
-  color: inherit;
+input[type="button"] {
+  cursor: pointer;
 }
 
-a:visited {
-  color: inherit;
+input[type="text"],
+input[type="button"]:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
 }
 
-.relative_div {
-  position: relative;
+input[type="text"]::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+input[type="text"]:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
+input[type="submit"] {
+  box-sizing: unset;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0.5rem;
+  padding-bottom: 0.4rem;
+}
+
+input[type="submit"]:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 nav {
   height: 6rem;
-  border-bottom: 0.12rem solid black;
 }
 
-.nav_top ol {
+.back {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  opacity: 40%;
+}
+
+#back_header {
+  grid-column: 2;
+  grid-row: 1;
+  z-index: -1;
+  border-radius: 0 0 1rem 1rem;
+}
+#back_main {
+  grid-column: 2;
+  grid-row: 2 / 4;
+  z-index: -1;
+  border-radius: 1rem 1rem 0 0;
+}
+
+#main_menu ol {
   display: flex;
   flex-direction: row;
-  gap: 1rem;
   width: inherit;
   height: inherit;
   list-style-type: none;
   padding: 0;
 }
 
-.nav_top .nav_li {
+#main_menu .nav_li {
   position: relative;
-  width: 8rem;
 }
 
-.nav_top .nav_li a {
+#main_menu .nav_li input[type="button"] {
   display: block;
   width: 100%;
   height: 100%;
-  text-decoration: none;
-  border: 0.1rem solid black;
+  border: none;
+  font-size: 2rem;
 }
 
-.nav_top .nav_li p {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+#main_menu .nav_li #home_btn {
+  border-radius: 1rem 0 0 1rem;
+}
+
+main h1 {
+  font-size: 6rem;
+}
+
+#job_search_form {
+  height: 2rem;
+}
+
+#job_search_form #job_search_text {
+  width: 20rem;
+  height: 2rem;
+  font-size: 2rem;
+}
+
+#job_search_form #job_search_btn {
+  width: max-content;
+  height: 2rem;
+  font-size: 2rem;
 }
 
 .right_side {
@@ -92,14 +166,19 @@ nav {
   transform: translate(-50%, -50%);
 }
 
-.right_side .scroll_top_btn {
+.right_side #page_up_btn {
   position: absolute;
   right: 0%;
   bottom: 0%;
   transform: translate(-50%, -50%);
   width: 4rem;
   height: 4rem;
-  border-radius: 1rem;
-  background-color: blue;
-  cursor: pointer;
+  border-radius: 2rem;
+  font-size: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.right_side #page_up_btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
 }
