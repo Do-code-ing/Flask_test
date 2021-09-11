@@ -5,40 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="static/css/style.css" />
+    <script defer src="static/js/nav.js"></script>
+    <script defer src="static/js/result.js"></script>
     <title>Job Search</title>
   </head>
   <body>
     <header>
-      <nav class="nav_top">
+      <nav id="main_menu">
         <ol>
           <li class="nav_li">
-            <div class="nav_btn">Home</div>
+            <input id="home_btn" type="button" value="Home" />
           </li>
           <li class="nav_li">
-            <div class="nav_btn">Reference</div>
+            <input id="reference_btn" type="button" value="Reference" />
           </li>
           <li class="nav_li">
-            <div class="nav_btn">More</div>
+            <input id="more_btn" type="button" value="More" />
           </li>
         </ol>
       </nav>
     </header>
+    <div class="back" id="back_header"></div>
     <main>
-      <h1>Search Results</h1>
-      <h3>Found {{result_number}} results for: {{searching_by}}</h3>
-      <a href="/export?word={{searching_by}}">Export to CSV</a>
+      <section id="result_category">
+        <h2>Search Results</h2>
+        <h3>Found {{result_number}} results for: {{searching_by}}</h3>
+        <input type="button" id="result_export" value="Export to CSV" url="/export?word={{searching_by}}">
+      </section>
       <section>
-        <h4>Title</h4>
-        <h4>Company</h4>
-        <h4>Location</h4>
-        <h4>Link</h4>
-        {% for job in jobs %}
-        <span>{{job.title}}</span>
-        <span>{{job.company}}</span>
-        <span>{{job.location}}</span>
-        <a href="{{job.link}}" target="_blank">Apply</a>
-        {% endfor %}
+        <table>
+          <thead>
+            <tr class="result_thead">
+              <th>Title</th>
+              <th>Company</th>
+              <th>Location</th>
+              <th>Link</th>
+            </tr>
+          </thead>
+          <tbody class="result_tbody">
+            {% for job in jobs %}
+            <tr class="result_tr">
+              <td>{{job.title}}</td>
+              <td>{{job.company}}</td>
+              <td>{{job.location}}</td>
+              <td class="result_apply_td">
+                <input type="button" class="result_apply_btn" value="Apply" url="{{job.link}}"></input>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
       </section>
     </main>
+    <div class="back" id="back_main"></div>
+    <aside class="right_side">
+      <div class="right_side_div">
+        <section class="search_record">aside</section>
+      </div>
+    </aside>
+    <footer>
+      <p>Date from StackOverflow, Indeed</p> 
+      <input id="page_up_btn" type="button" value="TOP" />
+    </footer>
+    <div class="back" id="back_footer"></div>
   </body>
 </html>
