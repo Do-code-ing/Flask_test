@@ -99,7 +99,13 @@ nav {
 }
 #back_main {
   grid-column: 2;
-  grid-row: 2 / 4;
+  grid-row: 2;
+  z-index: -1;
+  border-radius: 1rem;
+}
+#back_footer {
+  grid-column: 2;
+  grid-row: 3;
   z-index: -1;
   border-radius: 1rem 1rem 0 0;
 }
@@ -123,6 +129,7 @@ nav {
   height: 100%;
   border: none;
   font-size: 2rem;
+  padding: 2rem;
 }
 
 #main_menu .nav_li #home_btn {
@@ -147,6 +154,47 @@ main h1 {
   width: max-content;
   height: 2rem;
   font-size: 2rem;
+}
+
+@keyframes slide {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: 16rem;
+  }
+}
+
+#searching {
+  position: relative;
+  align-items: center;
+  font-size: 2rem;
+  color: darkslategrey;
+}
+
+#searching #searching_progress {
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  height: 2rem;
+  width: 16rem;
+  border-radius: 0.5rem;
+  background-image: repeating-linear-gradient(
+    to right,
+    rgba(0, 183, 255, 1),
+    white,
+    rgba(0, 183, 255, 1)
+  );
+  animation: slide 1s linear infinite;
+  will-change: background-position;
+  opacity: 80%;
+}
+
+#searching p {
+  z-index: 1;
 }
 
 .right_side {
@@ -181,4 +229,9 @@ main h1 {
 .right_side #page_up_btn:hover {
   background-color: rgba(255, 255, 255, 0.2);
   color: white;
+}
+
+footer {
+  grid-column: 2;
+  grid-row: 3;
 }
