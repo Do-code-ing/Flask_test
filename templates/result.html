@@ -35,14 +35,14 @@
       <section>
         <table>
           <thead>
-            <tr class="result_thead">
+            <tr id="result_thead">
               <th>Title</th>
               <th>Company</th>
               <th>Location</th>
               <th>Link</th>
             </tr>
           </thead>
-          <tbody class="result_tbody">
+          <tbody id="result_tbody">
             {% for job in jobs %}
             <tr class="result_tr">
               <td>{{job.title}}</td>
