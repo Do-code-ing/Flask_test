@@ -150,6 +150,13 @@ main h1 {
   width: max-content;
   height: 2rem;
   font-size: 2rem;
+  background-color: orange;
+  color: darkblue;
+}
+
+#job_search_form #job_search_btn:hover {
+  background-color: skyblue;
+  color: yellow;
 }
 
 @keyframes slide {
