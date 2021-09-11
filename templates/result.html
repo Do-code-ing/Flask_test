@@ -30,7 +30,14 @@
       <section id="result_category">
         <h2>Search Results</h2>
         <h3>Found {{result_number}} results for: {{searching_by}}</h3>
-        <input type="button" id="result_export" value="Export to CSV" url="/export?word={{searching_by}}">
+        <div id="result_export_div">
+          <input
+            type="button"
+            id="result_export"
+            value="Export to CSV"
+            url="/export?word={{searching_by}}"
+          />
+        </div>
       </section>
       <section>
         <table>
@@ -49,7 +56,12 @@
               <td>{{job.company}}</td>
               <td>{{job.location}}</td>
               <td class="result_apply_td">
-                <input type="button" class="result_apply_btn" value="Apply" url="{{job.link}}"></input>
+                <input
+                  type="button"
+                  class="result_apply_btn"
+                  value="Apply"
+                  url="{{job.link}}"
+                />
               </td>
             </tr>
             {% endfor %}
@@ -64,7 +76,7 @@
       </div>
     </aside>
     <footer>
-      <p>Date from StackOverflow, Indeed</p> 
+      <p>Date from StackOverflow, Indeed</p>
       <input id="page_up_btn" type="button" value="TOP" />
     </footer>
     <div class="back" id="back_footer"></div>

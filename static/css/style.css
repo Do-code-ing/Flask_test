@@ -211,9 +211,21 @@ main h1 {
   word-wrap: break-word;
 }
 
-#result_category #result_export {
+#result_category #result_export_div {
   grid-column: 3;
   text-align: right;
+}
+
+#result_category #result_export_div #result_export {
+  border-radius: 0.5rem;
+  font-size: 2rem;
+  background-color: skyblue;
+  color: lemonchiffon;
+}
+
+#result_category #result_export_div #result_export:hover {
+  background-color: orange;
+  color: darkblue;
 }
 
 #result_thead,
@@ -309,10 +321,10 @@ footer #page_up_btn {
   border-radius: 1.5rem;
   font-size: 1rem;
   background-color: skyblue;
-  color: lightyellow;
+  color: lemonchiffon;
 }
 
 footer #page_up_btn:hover {
   background-color: orange;
-  color: white;
+  color: darkblue;
 }
