@@ -6,8 +6,8 @@ const searching = document.getElementById("searching");
 searching.hidden = true;
 
 function handleJobSearchBtnClick() {
-  console.log(jobSearchText);
-  if (jobSearchText.value) {
+  const text = jobSearchText.value;
+  if (text) {
     jobSearchForm.hidden = true;
     searching.hidden = false;
   }

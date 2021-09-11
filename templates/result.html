@@ -72,7 +72,18 @@
     <div class="back" id="back_main"></div>
     <aside class="right_side">
       <div class="right_side_div">
-        <section class="search_record">aside</section>
+        <p>Search Record</p>
+        {% for record in records %}
+        <form action="/result" method="get">
+          <input
+            class="right_side_div_record_input"
+            type="text"
+            name="word"
+            value="{{record}}"
+          />
+          <input class="right_side_record" type="submit" value="{{record}}" />
+        </form>
+        {% endfor %}
       </div>
     </aside>
     <footer>
