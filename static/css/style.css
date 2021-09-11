@@ -345,3 +345,7 @@ footer #page_up_btn:hover {
   background-color: orange;
   color: darkblue;
 }
+
+footer p {
+  font-size: 1.2rem;
+}
