@@ -8,14 +8,11 @@ main {
 
 #more_title {
   grid-row: 1;
-  margin-top: 1.5rem;
 }
 
-#more_title .more_item {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 2fr 5fr;
-  font-size: 3rem;
+#more_title h2 {
+  font-size: 4rem;
+  padding-top: 1.5rem;
 }
 
 #more_list {
@@ -32,12 +29,12 @@ main {
   font-size: 2rem;
 }
 
-.more_item .more_item_title {
+#more_list .more_item .more_item_title {
   grid-column: 1;
   text-align: right;
 }
 
-.more_item .more_item_title p {
+#more_list .more_item .more_item_title p {
   display: inline-block;
   border-radius: 0.5rem;
   padding: 0.5rem;
@@ -45,7 +42,7 @@ main {
   color: darkblue;
 }
 
-.more_item .more_item_link {
+#more_list .more_item .more_item_link {
   grid-column: 2;
   text-align: left;
 }
