@@ -1,1 +1,1 @@
-web: gunicorn --bind 0.0.0.0:$PORT app:Nomad_Job_Search
+web: gunicorn main:app
