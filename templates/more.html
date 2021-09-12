@@ -4,62 +4,19 @@
     <h2>😎 Invite you 😎</h2>
   </article>
   <article id="more_list">
+    {% for title in db%}
     <section class="more_item">
       <div class="more_item_title">
-        <p>Do-Code-Ing</p>
+        <p>{{title}}</p>
       </div>
       <div class="more_item_link">
-        <a href="https://github.com/Do-code-ing" target="_blank"
-          >Do-Code-Ing GitHub</a
-        >
+        {% for (link, text) in db[title] %}
+        <a href="{{link}}" target="_blank">{{text}}</a>
+        <br />
+        {% endfor %}
       </div>
     </section>
-    <section class="more_item">
-      <div class="more_item_title">
-        <p>To Do List</p>
-      </div>
-      <div class="more_item_link">
-        <a
-          href="https://do-code-ing.github.io/Nomad_Vanilla_JS/"
-          target="_blank"
-          >Momentum App</a
-        >
-      </div>
-    </section>
-    <section class="more_item">
-      <div class="more_item_title">
-        <p>Clone Zoom</p>
-      </div>
-      <div class="more_item_link">
-        <a
-          href="https://do-code-ing.github.io/Nomad_Clone_ZOOM/"
-          target="_blank"
-          >Noom</a
-        >
-      </div>
-    </section>
-    <section class="more_item">
-      <div class="more_item_title">
-        <p>Paint Brush</p>
-      </div>
-      <div class="more_item_link">
-        <a
-          href="https://do-code-ing.github.io/Nomad_Paint_Brush/"
-          target="_blank"
-          >Paint Brush</a
-        >
-      </div>
-    </section>
-    <section class="more_item">
-      <div class="more_item_title">
-        <p>Movie App</p>
-      </div>
-      <div class="more_item_link">
-        <a href="https://do-code-ing.github.io/Nomad_Movie_App/" target="_blank"
-          >Movie App</a
-        >
-      </div>
-    </section>
+    {% endfor %}
   </article>
 </main>
 <footer>
