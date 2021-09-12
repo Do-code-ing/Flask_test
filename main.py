@@ -3,7 +3,7 @@ from scrapper import get_jobs
 from exporter import save_to_file
 from collections import deque
 
-app = Flask("Test")
+app = Flask(__name__)
 
 db = {}  # fake DB
 records = deque()
@@ -31,7 +31,7 @@ def record_control(word):
 
 @app.route("/")
 def home():
-    return render_template("home.html", records=records)
+    return render_template("home.html", js="home", records=records)
 
 
 @app.route("/result")
@@ -43,18 +43,18 @@ def result():
         if word not in db:
             jobs = get_jobs(word)
             db[word] = jobs
-        return render_template("result.html", result_number=len(db[word]), searching_by=word, jobs=db[word], records=records)
+        return render_template("result.html", css="result", js="result", result_number=len(db[word]), searching_by=word, jobs=db[word], records=records)
     return redirect("/")
 
 
 @app.route("/reference")
 def reference():
-    return render_template("reference.html", records=records)
+    return render_template("reference.html", css="reference", records=records)
 
 
 @app.route("/more")
 def more():
-    return render_template("more.html", records=records)
+    return render_template("more.html", css="more", records=records)
 
 
 @ app.route("/export")

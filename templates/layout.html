@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="static/css/style.css" />
+    {% if css %}
+    <link rel="stylesheet" href="static/css/{{css}}.css" />
+    {% endif %} {% if js %}
+    <script defer src="static/js/{{js}}.js"></script>
+    {% endif %}
+    <title>Job Search</title>
+  </head>
+  <body>
+    <header>
+      <nav id="main_menu">
+        <ol>
+          <li class="nav_li">
+            <a id="home_btn" href="/"><p>Home</p> </a>
+          </li>
+          <li class="nav_li">
+            <a href="/reference"><p>Reference</p></a>
+          </li>
+          <li class="nav_li">
+            <a href="/more"><p>More</p></a>
+          </li>
+        </ol>
+      </nav>
+    </header>
+
+    <!-- Main content block -->
+    {% block content %} {% endblock %}
+    <aside class="right_side">
+      <div class="right_side_div">
+        <p>Search Record</p>
+        {% for record in records %}
+        <form action="/result" method="get">
+          <input
+            class="right_side_div_record_input"
+            type="text"
+            name="word"
+            value="{{record}}"
+          />
+          <input class="right_side_record" type="submit" value="{{record}}" />
+        </form>
+        {% endfor %}
+      </div>
+    </aside>
+    <div class="back" id="back_header"></div>
+    <div class="back" id="back_main"></div>
+    <div class="back" id="back_footer"></div>
+  </body>
+</html>

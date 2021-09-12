@@ -90,3 +90,31 @@
 #result_tbody .result_tr a {
   text-align: center;
 }
+
+footer #footer_btn_div {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+footer #footer_btn_div .footer_btn {
+  width: 3rem;
+  height: 3rem;
+  margin: 1rem;
+  margin-left: 0;
+  border-radius: 1.5rem;
+  background-color: skyblue;
+  color: yellow;
+}
+
+footer #footer_btn_div .footer_btn:hover {
+  background-color: orange;
+  color: darkblue;
+}
+
+footer #footer_btn_div #page_up_btn {
+  font-size: 1rem;
+}
+
+footer #footer_btn_div #page_back_btn {
+  font-size: 0.9rem;
+}

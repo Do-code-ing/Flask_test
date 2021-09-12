@@ -47,9 +47,9 @@ main {
   text-align: left;
 }
 
-a,
-a:link,
-a:visited {
+#more_list .more_item .more_item_link a,
+#more_list .more_item .more_item_link a:link,
+#more_list .more_item .more_item_link a:visited {
   display: inline-block;
   text-decoration: unset;
   border-radius: 0.5rem;
@@ -59,6 +59,6 @@ a:visited {
   transition: background-color 0.4s;
 }
 
-a:hover {
+#more_list .more_item .more_item_link a:hover {
   background-color: rgba(0, 0, 255, 0.5);
 }

@@ -1,109 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="static/css/style.css" />
-    <link rel="stylesheet" href="static/css/reference.css" />
-    <script defer src="static/js/nav.js"></script>
-    <title>Job Search</title>
-  </head>
-  <body>
-    <header>
-      <nav id="main_menu">
-        <ol>
-          <li class="nav_li">
-            <input id="home_btn" type="button" value="Home" />
-          </li>
-          <li class="nav_li">
-            <input id="reference_btn" type="button" value="Reference" />
-          </li>
-          <li class="nav_li">
-            <input id="more_btn" type="button" value="More" />
-          </li>
-        </ol>
-      </nav>
-    </header>
-    <div class="back" id="back_header"></div>
-    <main>
-      <article id="reference_title">
-        <h2>🏆 Thanks To 🏆</h2>
-      </article>
-      <article id="reference_list">
-        <section class="reference_item">
-          <div class="reference_item_title">
-            <p>노마드 코더</p>
-          </div>
-          <div class="reference_item_link">
-            <a href="https://nomadcoders.co/" target="_blank"
-              >Nomad Coders - Clone Startups. Learn to Code.</a
-            >
-            <br />
-            <a
-              href="https://www.youtube.com/c/%EB%85%B8%EB%A7%88%EB%93%9C%EC%BD%94%EB%8D%94NomadCoders"
-              target="_blank"
-              >노마드 코더 Nomad Coders (Youtube)</a
-            >
-          </div>
-        </section>
-        <section class="reference_item">
-          <div class="reference_item_title">
-            <p>1분코딩</p>
-          </div>
-          <div class="reference_item_link">
-            <a href="https://studiomeal.com/archives/197" target="_blank"
-              >이번에야말로 CSS Flex를 익혀보자 - 1분 코딩</a
-            >
-            <a href="https://studiomeal.com/archives/533" target="_blank"
-              >이번에야말로 CSS Grid를 익혀보자 - 1분 코딩</a
-            >
-          </div>
-        </section>
-        <section class="reference_item">
-          <div class="reference_item_title">
-            <p>드림코딩</p>
-          </div>
-          <div class="reference_item_link">
-            <a
-              href="https://www.youtube.com/c/%EB%93%9C%EB%A6%BC%EC%BD%94%EB%94%A9by%EC%97%98%EB%A6%AC"
-              target="_blank"
-              >드림코딩 by 엘리 (Youtube)</a
-            >
-          </div>
-        </section>
-        <section class="reference_item">
-          <div class="reference_item_title">
-            <p>MDN</p>
-          </div>
-          <div class="reference_item_link">
-            <a href="https://developer.mozilla.org/en-US/" target="_blank"
-              >MDN Web Docs</a
-            >
-          </div>
-        </section>
-      </article>
-    </main>
-    <div class="back" id="back_main"></div>
-    <aside class="right_side">
-      <div class="right_side_div">
-        <p>Search Record</p>
-        {% for record in records %}
-        <form action="/result" method="get">
-          <input
-            class="right_side_div_record_input"
-            type="text"
-            name="word"
-            value="{{record}}"
-          />
-          <input class="right_side_record" type="submit" value="{{record}}" />
-        </form>
-        {% endfor %}
+{% extends 'layout.html' %} {% block content %}
+<main>
+  <article id="reference_title">
+    <h2>🏆 Thanks To 🏆</h2>
+  </article>
+  <article id="reference_list">
+    <section class="reference_item">
+      <div class="reference_item_title">
+        <p>노마드 코더</p>
       </div>
-    </aside>
-    <footer>
-      <p>Web Scrapper with Nomad Coder</p>
-    </footer>
-    <div class="back" id="back_footer"></div>
-  </body>
-</html>
+      <div class="reference_item_link">
+        <a href="https://nomadcoders.co/" target="_blank"
+          >Nomad Coders - Clone Startups. Learn to Code.</a
+        >
+        <br />
+        <a
+          href="https://www.youtube.com/c/%EB%85%B8%EB%A7%88%EB%93%9C%EC%BD%94%EB%8D%94NomadCoders"
+          target="_blank"
+          >노마드 코더 Nomad Coders (Youtube)</a
+        >
+      </div>
+    </section>
+    <section class="reference_item">
+      <div class="reference_item_title">
+        <p>1분코딩</p>
+      </div>
+      <div class="reference_item_link">
+        <a href="https://studiomeal.com/archives/197" target="_blank"
+          >이번에야말로 CSS Flex를 익혀보자 - 1분 코딩</a
+        >
+        <a href="https://studiomeal.com/archives/533" target="_blank"
+          >이번에야말로 CSS Grid를 익혀보자 - 1분 코딩</a
+        >
+      </div>
+    </section>
+    <section class="reference_item">
+      <div class="reference_item_title">
+        <p>드림코딩</p>
+      </div>
+      <div class="reference_item_link">
+        <a
+          href="https://www.youtube.com/c/%EB%93%9C%EB%A6%BC%EC%BD%94%EB%94%A9by%EC%97%98%EB%A6%AC"
+          target="_blank"
+          >드림코딩 by 엘리 (Youtube)</a
+        >
+      </div>
+    </section>
+    <section class="reference_item">
+      <div class="reference_item_title">
+        <p>MDN</p>
+      </div>
+      <div class="reference_item_link">
+        <a href="https://developer.mozilla.org/en-US/" target="_blank"
+          >MDN Web Docs</a
+        >
+      </div>
+    </section>
+  </article>
+</main>
+<footer>
+  <p>Web Scrapper with Nomad Coder</p>
+</footer>
+{% endblock %}

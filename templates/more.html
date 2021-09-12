@@ -1,116 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="static/css/style.css" />
-    <link rel="stylesheet" href="static/css/more.css" />
-    <script defer src="static/js/nav.js"></script>
-    <title>Job Search</title>
-  </head>
-  <body>
-    <header>
-      <nav id="main_menu">
-        <ol>
-          <li class="nav_li">
-            <input id="home_btn" type="button" value="Home" />
-          </li>
-          <li class="nav_li">
-            <input id="reference_btn" type="button" value="Reference" />
-          </li>
-          <li class="nav_li">
-            <input id="more_btn" type="button" value="More" />
-          </li>
-        </ol>
-      </nav>
-    </header>
-    <div class="back" id="back_header"></div>
-    <main>
-      <article id="more_title">
-        <h2>More Pages 💦</h2>
-      </article>
-      <article id="more_list">
-        <section class="more_item">
-          <div class="more_item_title">
-            <p>Do-Code-Ing</p>
-          </div>
-          <div class="more_item_link">
-            <a href="https://github.com/Do-code-ing" target="_blank"
-              >Do-Code-Ing GitHub</a
-            >
-          </div>
-        </section>
-        <section class="more_item">
-          <div class="more_item_title">
-            <p>To Do List</p>
-          </div>
-          <div class="more_item_link">
-            <a
-              href="https://do-code-ing.github.io/Nomad_Vanilla_JS/"
-              target="_blank"
-              >Momentum App</a
-            >
-          </div>
-        </section>
-        <section class="more_item">
-          <div class="more_item_title">
-            <p>Clone Zoom</p>
-          </div>
-          <div class="more_item_link">
-            <a
-              href="https://do-code-ing.github.io/Nomad_Clone_ZOOM/"
-              target="_blank"
-              >Noom</a
-            >
-          </div>
-        </section>
-        <section class="more_item">
-          <div class="more_item_title">
-            <p>Paint Brush</p>
-          </div>
-          <div class="more_item_link">
-            <a
-              href="https://do-code-ing.github.io/Nomad_Paint_Brush/"
-              target="_blank"
-              >Paint Brush</a
-            >
-          </div>
-        </section>
-        <section class="more_item">
-          <div class="more_item_title">
-            <p>Movie App</p>
-          </div>
-          <div class="more_item_link">
-            <a
-              href="https://do-code-ing.github.io/Nomad_Movie_App/"
-              target="_blank"
-              >Movie App</a
-            >
-          </div>
-        </section>
-      </article>
-    </main>
-    <div class="back" id="back_main"></div>
-    <aside class="right_side">
-      <div class="right_side_div">
-        <p>Search Record</p>
-        {% for record in records %}
-        <form action="/result" method="get">
-          <input
-            class="right_side_div_record_input"
-            type="text"
-            name="word"
-            value="{{record}}"
-          />
-          <input class="right_side_record" type="submit" value="{{record}}" />
-        </form>
-        {% endfor %}
+{% extends 'layout.html' %} {% block content %}
+<main>
+  <article id="more_title">
+    <h2>😎 Invite you 😎</h2>
+  </article>
+  <article id="more_list">
+    <section class="more_item">
+      <div class="more_item_title">
+        <p>Do-Code-Ing</p>
       </div>
-    </aside>
-    <footer>
-      <p>Create By Do-Code-Ing</p>
-    </footer>
-    <div class="back" id="back_footer"></div>
-  </body>
-</html>
+      <div class="more_item_link">
+        <a href="https://github.com/Do-code-ing" target="_blank"
+          >Do-Code-Ing GitHub</a
+        >
+      </div>
+    </section>
+    <section class="more_item">
+      <div class="more_item_title">
+        <p>To Do List</p>
+      </div>
+      <div class="more_item_link">
+        <a
+          href="https://do-code-ing.github.io/Nomad_Vanilla_JS/"
+          target="_blank"
+          >Momentum App</a
+        >
+      </div>
+    </section>
+    <section class="more_item">
+      <div class="more_item_title">
+        <p>Clone Zoom</p>
+      </div>
+      <div class="more_item_link">
+        <a
+          href="https://do-code-ing.github.io/Nomad_Clone_ZOOM/"
+          target="_blank"
+          >Noom</a
+        >
+      </div>
+    </section>
+    <section class="more_item">
+      <div class="more_item_title">
+        <p>Paint Brush</p>
+      </div>
+      <div class="more_item_link">
+        <a
+          href="https://do-code-ing.github.io/Nomad_Paint_Brush/"
+          target="_blank"
+          >Paint Brush</a
+        >
+      </div>
+    </section>
+    <section class="more_item">
+      <div class="more_item_title">
+        <p>Movie App</p>
+      </div>
+      <div class="more_item_link">
+        <a href="https://do-code-ing.github.io/Nomad_Movie_App/" target="_blank"
+          >Movie App</a
+        >
+      </div>
+    </section>
+  </article>
+</main>
+<footer>
+  <p>Create By Do-Code-Ing</p>
+</footer>
+{% endblock %}

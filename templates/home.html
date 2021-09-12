@@ -1,69 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="static/css/style.css" />
-    <script defer src="static/js/nav.js"></script>
-    <script defer src="static/js/home.js"></script>
-    <title>Job Search</title>
-  </head>
-  <body>
-    <header>
-      <nav id="main_menu">
-        <ol>
-          <li class="nav_li">
-            <input id="home_btn" type="button" value="Home" />
-          </li>
-          <li class="nav_li">
-            <input id="reference_btn" type="button" value="Reference" />
-          </li>
-          <li class="nav_li">
-            <input id="more_btn" type="button" value="More" />
-          </li>
-        </ol>
-      </nav>
-    </header>
-    <div class="back" id="back_header"></div>
-    <main>
-      <h1>Job Search</h1>
-      <form action="/result" method="get" id="job_search_form">
-        <input
-          type="text"
-          placeholder="Search for a job"
-          name="word"
-          required
-          id="job_search_text"
-          maxlength="14"
-        />
-        <input type="submit" value="Search" id="job_search_btn" />
-      </form>
-      <div id="searching">
-        <div id="searching_progress"></div>
-        <p>Searching</p>
-      </div>
-    </main>
-    <div class="back" id="back_main"></div>
-    <aside class="right_side">
-      <div class="right_side_div">
-        <p>Search Record</p>
-        {% for record in records %}
-        <form action="/result" method="get">
-          <input
-            class="right_side_div_record_input"
-            type="text"
-            name="word"
-            value="{{record}}"
-          />
-          <input class="right_side_record" type="submit" value="{{record}}" />
-        </form>
-        {% endfor %}
-      </div>
-    </aside>
-    <footer>
-      <p>You will be Get Careers & Enter Nice Company.</p>
-    </footer>
-    <div class="back" id="back_footer"></div>
-  </body>
-</html>
+{% extends 'layout.html' %} {% block content %}
+<main>
+  <h1>Job Search</h1>
+  <form action="/result" method="get" id="job_search_form">
+    <input
+      type="text"
+      placeholder="Search for a job"
+      name="word"
+      required
+      id="job_search_text"
+      maxlength="14"
+    />
+    <input type="submit" value="Search" id="job_search_btn" />
+  </form>
+  <div id="searching">
+    <div id="searching_progress"></div>
+    <p>Searching</p>
+  </div>
+</main>
+<footer>
+  <p>You will be Get Careers & Enter Nice Company.</p>
+</footer>
+{% endblock %}

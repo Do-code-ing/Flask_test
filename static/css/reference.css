@@ -47,9 +47,9 @@ main {
   text-align: left;
 }
 
-a,
-a:link,
-a:visited {
+#reference_list .reference_item .reference_item_link a,
+#reference_list .reference_item .reference_item_link a:link,
+#reference_list .reference_item .reference_item_link a:visited {
   display: inline-block;
   text-decoration: unset;
   border-radius: 0.5rem;
@@ -59,6 +59,6 @@ a:visited {
   transition: background-color 0.4s;
 }
 
-a:hover {
+#reference_list .reference_item .reference_item_link a:hover {
   background-color: rgba(0, 0, 255, 0.5);
 }
