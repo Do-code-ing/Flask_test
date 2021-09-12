@@ -4,6 +4,7 @@ from exporter import save_to_file
 from collections import deque
 
 app = Flask(__name__)
+app.url_map.strict_slashes = False
 
 db = {}  # fake DB
 records = deque()
@@ -57,7 +58,7 @@ def more():
     return render_template("more.html", css="more", records=records)
 
 
-@ app.route("/export")
+@app.route("/export")
 def export():
     try:
         word = request.args.get("word")
@@ -71,6 +72,12 @@ def export():
         return send_file("jobs.csv")
     except:
         return redirect("/")
+
+
+@app.errorhandler(404)
+def page_not_found(error):
+    print(error)
+    return redirect("/")
 
 
 app.run(debug=True)

@@ -1,7 +1,7 @@
 {% extends 'layout.html' %} {% block content %}
 <main>
   <h1>Job Search</h1>
-  <form action="/result" method="get" id="job_search_form">
+  <form action="{{url_for('result')}}" method="get" id="job_search_form">
     <input
       type="text"
       placeholder="Search for a job"
