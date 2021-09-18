@@ -9,9 +9,9 @@
       href="{{ url_for('static', filename='css/style.css') }}"
     />
     {% if css %}
-    <link rel="stylesheet" href="../static/css/{{css}}.css" />
+    <link rel="stylesheet" href="/static/css/{{css}}.css" />
     {% endif %} {% if js %}
-    <script defer src="../static/js/{{js}}.js"></script>
+    <script defer src="/static/js/{{js}}.js"></script>
     {% endif %}
     <title>Job Search</title>
   </head>
