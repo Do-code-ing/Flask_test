@@ -1,3 +1,12 @@
+body {
+  align-items: unset;
+}
+
+table {
+  display: flex;
+  flex-direction: column;
+}
+
 #result_category {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -53,8 +62,6 @@
 #result_tbody {
   display: flex;
   flex-direction: column;
-  height: 34rem;
-  width: 74.5rem;
   overflow-y: scroll;
 }
 
