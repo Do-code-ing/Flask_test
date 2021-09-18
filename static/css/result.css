@@ -1,5 +1,6 @@
-body {
-  align-items: unset;
+main {
+  display: grid;
+  grid-template-rows: 1fr auto;
 }
 
 table {
@@ -8,25 +9,39 @@ table {
 }
 
 #result_category {
+  grid-row: 1;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 4fr 1fr;
   align-items: flex-end;
 }
 
-#result_category h2 {
+#result_list {
+  grid-row: 2;
+}
+
+#result_category_texts {
   grid-column: 1;
-  font-size: 3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  text-align: left;
+}
+
+#result_category h2 {
+  font-size: 2rem;
 }
 
 #result_category h3 {
-  grid-column: 2;
-  text-align: left;
   font-size: 1.5rem;
-  word-wrap: break-word;
+  margin-left: 0.6rem;
+}
+
+#result_category h3 span {
+  font-size: 2rem;
 }
 
 #result_category #result_export_div {
-  grid-column: 3;
+  grid-column: 2;
   text-align: right;
 }
 
@@ -54,6 +69,11 @@ table {
 }
 
 #result_thead {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+}
+
+#result_thead {
   font-size: 2rem;
   padding: 0.5rem;
   padding-left: 1rem;
@@ -63,6 +83,7 @@ table {
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
+  height: 35rem;
 }
 
 #result_tbody .result_tr {

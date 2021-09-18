@@ -1,8 +1,11 @@
 {% extends 'layout.html' %} {% block content %}
 <main>
   <section id="result_category">
-    <h2>Search Results</h2>
-    <h3>Found {{result_number}} results for: {{searching_by}}</h3>
+    <div id="result_category_texts">
+      <h2>Search Results</h2>
+      <h3>for:<span> {{searching_by}} </span></h3>
+      <h3>Found<span> {{result_number}} </span></h3>
+    </div>
     <div id="result_export_div">
       <input
         type="button"
@@ -12,7 +15,7 @@
       />
     </div>
   </section>
-  <section>
+  <section id="result_list">
     <table>
       <thead>
         <tr id="result_thead">
@@ -29,12 +32,7 @@
           <td>{{job.company}}</td>
           <td>{{job.location}}</td>
           <td class="result_apply_td">
-            <input
-              type="button"
-              class="result_apply_btn"
-              value="Apply"
-              url="{{job.link}}"
-            />
+            <input type="button" class="result_apply_btn" value="Apply" url="{{job.link}}" />
           </td>
         </tr>
         {% endfor %}
