@@ -1,3 +1,5 @@
+"use strict";
+
 const jobSearchForm = document.getElementById("job_search_form");
 const jobSearchText = document.getElementById("job_search_text");
 const jobSearchBtn = document.getElementById("job_search_btn");
